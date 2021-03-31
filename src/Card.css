@@ -1,0 +1,31 @@
+.card {
+  margin: 75vh 0;
+  background-color: rgb(212, 218, 224);
+  border-radius: 4px;
+  width: 280px;
+  height: 175px;
+  position: relative;
+  transition: transform 0.4s linear;
+}
+
+.card::after {
+  content: " ";
+  border-radius: 4px;
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  box-shadow: 0 8px 10px -3px rgba(0, 8, 38, 0.44);
+  transition: opacity 0.4s linear;
+}
+
+.card.--is-intersecting {
+  transform: translateY(-1rem) scale(1.005);
+}
+
+.card.--is-intersecting::after {
+  opacity: 1;
+}
